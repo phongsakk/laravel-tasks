@@ -23,3 +23,8 @@ Route::get('', function () {
         'message' => 'Hello World!',
     ], 201);
 });
+
+
+Route::get('users', function () {
+    return response(App\Models\User::all(), 200);
+});
