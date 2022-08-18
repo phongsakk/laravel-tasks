@@ -14,11 +14,16 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        $prefix_id = ($this->faker->numberBetween(0, 7) % 5) + 1;
+        $gender = in_array($prefix_id, [1, 3]) ? 'male' : 'female';
         return [
-            'name' => $this->faker->name(),
+            'role_id' => 3,
+            'prefix_id' => $prefix_id,
+            'firstname' => $this->faker->firstName($gender),
+            'lastname' => $this->faker->lastname(),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => bcrypt('password'),
             'remember_token' => Str::random(10),
         ];
     }
