@@ -2,15 +2,23 @@
 
 namespace App\Models;
 
+use App\Traits\BelongsToPrefix;
+use App\Traits\BelongsToRole;
+use App\Traits\HasVerificationSchema;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use BelongsToPrefix,
+        BelongsToRole,
+        HasApiTokens,
+        HasFactory,
+        HasVerificationSchema,
+        Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -18,7 +26,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'role_id',
+        'prefix_id',
+        'firstname',
+        'lastname',
         'email',
         'password',
     ];
