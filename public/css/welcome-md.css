@@ -1,0 +1,16 @@
+@media (min-width: 900px){
+  .card .card-avatar {
+    width: 40%;
+    padding: 5rem;
+    padding-right: 15%;
+    aspect-ratio: 1;
+  }
+
+.card .card-header {
+font-size: calc(1rem + 2.5vw);
+}
+
+.card .card-content {
+    padding-left: 4rem;
+  }
+}

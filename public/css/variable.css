@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@400;700&display=swap');
+
+:root {
+  --text-white: rgb(255, 255, 255);
+  --text-black: rgb(70, 70, 70);
+  --text-primary: rgb(255, 255, 255);
+  --text-secondary: rgb(255, 178, 0);
+  --text-secondary-lighten: rgb(255, 200, 100);
+  --text-shadow: rgba(0, 0, 0, 0.5) -2.4px 2.4px 3.2px;  
+  --bg-primary: rgb(60, 139, 204);
+  --bg-secondary: rgba(89, 173, 242, 1);
+  --box-shadow: rgba(0, 0, 0, 0.19) -10px 10px 20px, rgba(0, 0, 0, 0.23) -6px 6px 6px;
+}

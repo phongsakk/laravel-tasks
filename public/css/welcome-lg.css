@@ -1,0 +1,23 @@
+@media (min-width: 1200px) {
+  .container-flex {
+    padding: 4.5rem;
+  }
+
+  .card .card-body {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .card .card-content {
+    flex-grow: 1;
+  }
+
+  /* .card .card-content {
+    height: auto;
+  } */
+
+  .card .card-content ul>li {
+    margin-block: 2rem;
+  }
+}
