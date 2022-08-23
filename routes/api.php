@@ -33,8 +33,14 @@ Route::group(['prefix' => 'password'], function () {
 });
 // ^ Resource routes
 Route::get('prefixes', [ResourceController::class, 'prefixes']);
+Route::get('courses', [ResourceController::class, 'courses']);
 // * Authenticated routes
 Route::group(['middleware' => 'auth:sanctum'], function () {
+    Route::group(['prefix' => 'instructor'],function () {
+        Route::get('course',function () {
+            return App\Models\Course::all();
+        });
+    });
 });
 
 

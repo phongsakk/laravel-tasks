@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             PrefixSeeder::class,
             RoleSeeder::class,
             UserSeeder::class,
+            CourseSeeder::class,
+            ContentSeeder::class
         ]);
         User::factory(10)->create();
     }
