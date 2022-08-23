@@ -16,7 +16,7 @@ class RoleSeeder extends Seeder
     {
         $roles = [
             $this->createRole(1, 'แอดมิน', 'Administrator'),
-            $this->createRole(2, 'ผู้สร้างเนื้อหา', 'Content Creator'),
+            $this->createRole(2, 'ผู้สร้างเนื้อหา', 'Author'),
             $this->createRole(3, 'สมาชิก', 'Member'),
         ];
         foreach ($roles as $role) Role::create($role);
