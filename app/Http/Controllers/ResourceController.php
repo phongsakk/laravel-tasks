@@ -28,7 +28,7 @@ class ResourceController extends Controller
         if ($users->count() > 0) foreach ($users as $user) {
             $courses->orWhereBelongsTo($user,'author');
         }
-        $courses = $courses->paginate(2);
+        $courses = $courses->paginate(20);
         return response([
             'query' => $searchText,
             'paginate' => $courses,
