@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Traits\BelongsToPrefix;
 use App\Traits\BelongsToRole;
+use App\Traits\HasCourses;
 use App\Traits\HasVerificationSchema;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -16,6 +17,7 @@ class User extends Authenticatable implements MustVerifyEmail
     use BelongsToPrefix,
         BelongsToRole,
         HasApiTokens,
+        HasCourses,
         HasFactory,
         HasVerificationSchema,
         Notifiable;
