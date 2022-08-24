@@ -22,13 +22,13 @@ class ResourceController extends Controller
             ->orWhere('lastname', 'like', $searchQuery)
             ->get();
         $courses = Course::with(['author'])
-        ->where('id', 'like', $searchQuery)
-        ->orWhere('name', 'like', $searchQuery)
-        ->orWhere('description', 'like', $searchQuery);
+            ->where('id', 'like', $searchQuery)
+            ->orWhere('name', 'like', $searchQuery)
+            ->orWhere('description', 'like', $searchQuery);
         if ($users->count() > 0) foreach ($users as $user) {
-            $courses->orWhereBelongsTo($user,'author');
+            $courses->orWhereBelongsTo($user, 'author');
         }
-        $courses = $courses->paginate(20);
+        $courses = $courses->orderBy('created_at', 'desc')->paginate(20);
         return response([
             'query' => $searchText,
             'paginate' => $courses,
